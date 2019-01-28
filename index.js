@@ -24,36 +24,47 @@ var add1, add2, operacion, porcentaje;
 // NÚMEROS
 
 BTN1.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 1;
 });
 BTN2.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 2;
 });
 BTN3.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 3;
 });
 BTN4.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 4;
 });
 BTN5.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 5;
 });
 BTN6.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 6;
 });
 BTN7.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 7;
 });
 BTN8.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 8;
 });
 BTN9.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 9;
 });
 BTNPUNTO.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + '.';
 });
 BTN0.addEventListener('click', function(e){
+	lb.innerHTML = "";
 	lb.innerHTML = lb.innerHTML + 0;
 });
 
@@ -121,7 +132,7 @@ function limpiar(){
 	lb.innerHTML = "";
 }
 function reset(){
-	lb.innerHTML = "";
+	lb.innerHTML = "0";
 	add1 = 0;
 	add2 = 0;
 	operacion = "";
