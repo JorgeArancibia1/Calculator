@@ -9,10 +9,13 @@
 		<link rel="stylesheet" href="CSS/index.css">
 	</head>
 
-	<body>
-		<section class="container">
+	<body class="bd">
+		<header class="header">
+			<h1 class="h1-header">Welcome to Calculator!</h1>
+		</header>
+		<section class="calculator-container">
 			<div class="calculator">
-				<label class="label" type="text" id="pantalla">0</label>
+				<label class="label" type="text" id="pantalla"></label>
 				<div class="botones">
 					<div class="item" id="boton1">
 						<input class="i" id="in1" type="button" value="1"/>
@@ -54,7 +57,7 @@
 						<input class="i" id="in9" type="button" value="9" />
 					</div>
 					<div class="item">
-						<input class="i" id="inCE" type="button" value="CE" />
+						<input class="iva" id="masIVA" type="button" value="+IVA" />
 					</div>
 					<div class="item">
 						<input class="i" id="inPorcent" type="button" value="%" />
@@ -69,7 +72,7 @@
 						<input class="i" id="inPunto" type="button" value="." />
 					</div>
 					<div class="item">
-						<input class="i" id="inN" type="button" value="x˟" />
+						<input class="iva" id="menosIVA" type="button" value="-IVA" />
 					</div>
 					<div class="item">
 						<input class="i" id="inResult" type="button" value="=" />

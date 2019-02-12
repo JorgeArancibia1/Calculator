@@ -13,129 +13,124 @@ const BTNMENOS = document.getElementById('inMenos');
 const BTNPOR = document.getElementById('inPor');
 const BTNDIV = document.getElementById('inDiv');
 const BTNPORCENT = document.getElementById('inPorcent');
-const BTNPOT = document.getElementById('inN');
+const BTNRIVA = document.getElementById('menosIVA');
 const BTNRESULT = document.getElementById('inResult');
-const BTNCE = document.getElementById('inCE');
+const BTNMIVA = document.getElementById('masIVA');
 const BTNC = document.getElementById('inC');
 const BTNPUNTO = document.getElementById('inPunto');
 var lb = document.getElementById('pantalla');
-var add1, add2, operacion, porcentaje;
+var add1, add2, operacion;
 
 // NÚMEROS
+var contenedor = "";
+lb.innerHTML = "0";
 
-BTN1.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 1;
+function imprimirNum(BTN) {
+	contenedor = contenedor + BTN.value;
+	lb.innerHTML = contenedor;
+}
+
+BTN1.addEventListener('click', function(){
+	imprimirNum(BTN1);
 });
-BTN2.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 2;
+BTN2.addEventListener('click', function(){
+	imprimirNum(BTN2);
 });
-BTN3.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 3;
+BTN3.addEventListener('click', function(){
+	imprimirNum(BTN3);
 });
-BTN4.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 4;
+BTN4.addEventListener('click', function(){
+	imprimirNum(BTN4);
 });
-BTN5.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 5;
+BTN5.addEventListener('click', function(){
+	imprimirNum(BTN5);
 });
-BTN6.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 6;
+BTN6.addEventListener('click', function(){
+	imprimirNum(BTN6);
 });
-BTN7.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 7;
+BTN7.addEventListener('click', function(){
+	imprimirNum(BTN7);
 });
-BTN8.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 8;
+BTN8.addEventListener('click', function(){
+	imprimirNum(BTN8);
 });
-BTN9.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 9;
+BTN9.addEventListener('click', function(){
+	imprimirNum(BTN9);
 });
-BTNPUNTO.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + '.';
+BTNPUNTO.addEventListener('click', function(){
+	imprimirNum(BTNPUNTO);
 });
-BTN0.addEventListener('click', function(e){
-	lb.innerHTML = "";
-	lb.innerHTML = lb.innerHTML + 0;
+BTN0.addEventListener('click', function(){
+	imprimirNum(BTN0);
 });
 
 // ACCIONES
 
-BTNC.addEventListener('click', function(e){
+BTNC.addEventListener('click', function(){
 	reset();
 });
-BTNCE.addEventListener('click', function(e){
-	limpiar();
-});
 
-BTNMAS.addEventListener('click', function(e){
+BTNMAS.addEventListener('click', function(){
 	add1 = lb.innerHTML;
 	operacion = '+';
-	lb.innerHTML = "";
+	contenedor = "";
 });
-BTNMENOS.addEventListener('click', function(e){
+BTNMENOS.addEventListener('click', function(){
 	add1 = lb.innerHTML;
 	operacion = '-';
-	lb.innerHTML = "";
+	contenedor = "";
+
 });
-BTNPOR.addEventListener('click', function(e){
+BTNPOR.addEventListener('click', function(){
 	add1 = lb.innerHTML;
 	operacion = 'x';
-	lb.innerHTML = "";
+	contenedor = "";
+
 });
-BTNDIV.addEventListener('click', function(e){
+BTNDIV.addEventListener('click', function(){
 	add1 = lb.innerHTML;
 	operacion = '÷';
-	lb.innerHTML = "";
+	contenedor = "";
+
 });
-BTNPORCENT.addEventListener('click', function(e){
+BTNPORCENT.addEventListener('click', function(){
 	add1 = lb.innerHTML;
 	operacion = '%';
-	lb.innerHTML = "";
+	contenedor = "";
+
 });
-BTNPOT.addEventListener('click', function(e){
-	add1 = lb.innerHTML;
-	operacion = 'n';
-	lb.innerHTML = "";
-});
-BTNRESULT.addEventListener('click', function(e){
+
+BTNRESULT.addEventListener('click', function(){
 	add2 = lb.innerHTML;
 	resultado();
 });
 
 // Botón para restar el IVA de un número.
-// BTNPORCENT.addEventListener('click', function(e){
-// 	const IVA = 0.19;
-// 	resultado = lb.innerHTML * IVA;
-// 	var nIVA = lb.innerHTML - resultado;
-// 	lb.innerHTML = nIVA;
-// });
+//
+BTNRIVA.addEventListener('click', function(){
+	const IVA = 0.81;
+	resultado = lb.innerHTML * IVA;
+	lb.innerHTML = resultado;
+});
 // Botón para restar el IVA de un número.
-// BTNPORCENT.addEventListener('click', function(e){
-// 	const IVA = 0.19;
-// 	resultado = lb.innerHTML * IVA;
-// 	var nIVA = lb.innerHTML + resultado;
-// 	lb.innerHTML = nIVA;
-// });
+//
+BTNMIVA.addEventListener('click', function(){
+	const IVA = 1.19;
+	resultado = parseInt(lb.innerHTML * IVA);
+	lb.innerHTML = resultado;
+});
 
 
 function limpiar(){
 	lb.innerHTML = "";
+	contenedor = "";
 }
 function reset(){
 	lb.innerHTML = "0";
 	add1 = 0;
 	add2 = 0;
 	operacion = "";
+	contenedor = "";
 }
 function resultado() {
 	var res = 0;
@@ -154,9 +149,6 @@ function resultado() {
 			break;
 		case '%':
 			res = (parseFloat(add1) / 100) * parseFloat(add2);
-			break;
-		case 'n':
-			res = parseFloat(add1) ** parseFloat(add2);
 			break;
 	}
 	reset();
