@@ -1,1 +1,1 @@
-# Este es un proyecto donde se creará una calculadora básica con dos botones particulares para sumar o restar el IVA de algún producto, y esta hecha con HTML, CSS y JavaScript.
+# Este es un proyecto donde se creará una calculadora básica con dos botones particulares, uno para para sumar y otro para restar el IVA del valor de determinado producto, y esta hecha con HTML, CSS y JavaScript.
